@@ -26,6 +26,24 @@ namespace Task33
                     return false;
                 }
             }
+            currentSum = 0;
+            for (int diagLeft = 0; diagLeft < matrix.GetLength(1); diagLeft++)
+            {
+                currentSum += matrix[diagLeft, diagLeft];
+            }
+            if (sum != currentSum)
+            {
+                return false;
+            }
+            currentSum = 0;
+            for (int diagRight = 0; diagRight < matrix.GetLength(1); diagRight++)
+            {
+                currentSum += matrix[diagRight, diagRight];
+            }
+            if (sum != currentSum)
+            {
+                return false;
+            }
             return true;
         }
         static void Main(string[] args)
